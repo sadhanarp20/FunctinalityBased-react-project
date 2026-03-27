@@ -6,27 +6,13 @@ export const ProductContext = createContext();
 
 const Context = (props) => {
     const [products, setproducts] = useState( 
-      JSON.parse(localStorage.getItem("products"))|| null
+      JSON.parse(localStorage.getItem("products"))|| []
     );
 
 
-    //axios put karege
-    // const getproducts = async () =>{
-    //  try {
-    //     const{data}= await axios("/products");
-    //     setproducts(data);  
-    //  } catch (error) {
-    //     console.log(error);
-    //  }
-
-    // };  //esaki jagah hum khud ka data layege ab 
-
-
-    // console.log(products)
-    // //call karege data
-    //  useEffect(()=>{
-    //     getproducts();
-    // },[]);
+    useEffect(() => {
+      localStorage.setItem("products", JSON.stringify(products));
+    }, [products]);
 
 
 
