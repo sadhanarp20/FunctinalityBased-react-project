@@ -1,36 +1,43 @@
-import React from 'react'
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
-import Home from './components/Home';
-import Details from './components/Details';
-import Create from './components/Create';
-import Edit from './components/Edit';
+// import React from 'react'
+// import { Link, Route, Routes, useLocation } from 'react-router-dom';
+// import Home from './components/Home';
+// import Details from './components/Details';
+// import Create from './components/Create';
+// import Edit from './components/Edit';
 
-const App = () => {
+// const App = () => {
 
-   const{search, pathname} = useLocation();
+//    const{search, pathname} = useLocation();
 
-  return (
-    <div className='h-screen w-screen flex'>
-       {(pathname != '/' || search.length > 0) && (
+//   return (
+//     <div className='h-screen w-screen flex'>
+//        {(pathname != '/' || search.length > 0) && (
 
-       <Link
-        to="/" 
-        className='text-red-300 absolute left-[17%] top-[3%]'>
-          Home
-        </Link>
-      )}
+//        <Link
+//         to="/" 
+//         className='text-red-300 absolute left-[17%] top-[3%]'>
+//           Home
+//         </Link>
+//       )}
 
 
-     <Routes>
-        <Route path='/' element={<Home/>}/>
-       <Route path='/create' element={<Create/>}/>
-       <Route path='/details/:id' element={<Details/>}/>
-       <Route path='/edit/:id' element={<Edit/>}/>
+//      <Routes>
+//         <Route path='/' element={<Home/>}/>
+//        <Route path='/create' element={<Create/>}/>
+//        <Route path='/details/:id' element={<Details/>}/>
+//        <Route path='/edit/:id' element={<Edit/>}/>
         
        
-      </Routes>  
-      </div>
-  );
-};
+//       </Routes>  
+//       </div>
+//   );
+// };
+
+// export default App;
+import React from 'react'
+
+const App = () => {
+  return <h1>Hello Sadhana 🚀</h1>
+}
 
 export default App;
