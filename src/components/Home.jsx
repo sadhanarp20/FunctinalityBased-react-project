@@ -39,7 +39,7 @@ const Home = () => {
   // console.log(filteredProducts);
 
 
-   return products ?(
+  return filteredProducts ?(
     <>
     {/* nav import karege */}
     <Nav/>
