@@ -109,10 +109,16 @@ const Context = (props) => {
 
 
 
-    const [products, setproducts] = useState(() => {
+   const [products, setproducts] = useState(() => {
   const saved = JSON.parse(localStorage.getItem("products"));
-  return saved && saved.length > 0 ? saved : defaultProducts;
-   });
+
+  // agar saved data kam hai to default use karo
+  if (!saved || saved.length < defaultProducts.length) {
+    return defaultProducts;
+  }
+
+  return saved;
+  });
 
 
     useEffect(() => {
