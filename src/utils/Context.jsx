@@ -54,8 +54,59 @@ const Context = (props) => {
     category: "Makeup",
     price: 900,
     description: "Beautiful shades for every occasion"
+  },
+
+  //
+  {
+    id: 7,
+    title: " Perfume",
+    image: "https://i.pinimg.com/736x/24/39/af/2439af3faffa0ed749610607b9113fd3.jpg",
+    category: "Perfume",
+    price: 1400,
+    description: "Awww🥹🫶I can understand your point and maybe you like strong fragrances, these two have minimal fragrance."
+  },
+  {
+    id: 8,
+    title: "Lieka | Robe avec haut - Beige",
+    image: "https://i.pinimg.com/1200x/44/22/9c/44229cd6f52b9a53fde7649588a50a02.jpg",
+    category: "Women's Clothing",
+    price: 3400,
+    description: "Découvrez la combinaison parfaite de style et de confort avec Lieka! Vous cherchez des vêtements élégants et confortables qui mettent en valeur votre silhouette?"
+  },
+  {
+    id: 9,
+    title: " SHEIN Stylish Shoes",
+    image: "https://i.pinimg.com/736x/83/35/20/833520c0956fa7e47e56c4beb38fd864.jpg",
+    category: "Shoes",
+    price: 2800,
+    description: "Comfortable and trendy shoes"
+  },
+  {
+    id: 10,
+    title: "Fitbit Versa 4 Premium Fitness Smartwatch",
+    image: "https://i.pinimg.com/1200x/1b/dd/aa/1bddaa19d6a629e01505000fbf5dc5c6.jpg",
+    category: "Electronics",
+    price: 300.90,
+    description: "Meet Fitbit Versa 4™—a fitness smartwatch featuring Daily Readiness Score, Active Zone Minutes"
+  },
+  {
+    id: 11,
+    title: "Handbag",
+    image: "https://i.pinimg.com/1200x/a8/f8/c5/a8f8c50aae4b3bd12b1c81e631d03774.jpg",
+    category: "Accessories",
+    price: 1500,
+    description: "Bolso cuadrado ligero, informal de negocios con estampado de letras y encuadernación en contraste para adolescentes, niñas, mujeres, estudiantes universitarias, novatos y trabajadores de cuello blanco,"
+  },
+  {
+    id: 12,
+    title: "Mars Lipstick Set",
+    image: "https://i.pinimg.com/736x/2b/8c/55/2b8c55e7a8a600b01ecaf6e465bc9ba6.jpg",
+    category: "Makeup",
+    price: 500.9,
+    description: "looking for the best lip combo?? go for this budget friendly 💗lip gloss combo"
   }
 ];
+
 
 
     const [products, setproducts] = useState(() => {
