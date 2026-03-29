@@ -25,16 +25,15 @@ const Home = () => {
     }
    };
 
-  useEffect(()=>{
-    if(!filteredProducts || category == 'undefined') 
-        setfilteredProducts(products);
-    if (category != "undefined"){
+  useEffect(() => {
 
-      // getproductscategory();  
-      setfilteredProducts(products.filter((p) => p.category == category));
-    }
-      
-   }, [category, products]);
+  if (!category) {
+    setfilteredProducts(products);
+  } else {
+    setfilteredProducts(products.filter((p) => p.category === category));
+  }
+
+    }, [category, products]);
   
   // console.log(filteredProducts);
 

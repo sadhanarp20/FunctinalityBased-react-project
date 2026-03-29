@@ -58,9 +58,10 @@ const Context = (props) => {
 ];
 
 
-    const [products, setproducts] = useState( 
-      JSON.parse(localStorage.getItem("products"))|| []
-    );
+    const [products, setproducts] = useState(() => {
+  const saved = JSON.parse(localStorage.getItem("products"));
+  return saved && saved.length > 0 ? saved : defaultProducts;
+   });
 
 
     useEffect(() => {
