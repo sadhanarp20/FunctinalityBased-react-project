@@ -13,7 +13,7 @@ const Home = () => {
 
    const category =  decodeURIComponent(search.split("=")[1]);
   
-    const[filteredProducts, setfilteredProducts] = useState(null);
+    const[filteredProducts, setfilteredProducts] = useState(products);
 
    //ye fuction call tb hi jb esaki value ho
    const getproductscategory = async()=>{
@@ -26,52 +26,45 @@ const Home = () => {
    };
 
   useEffect(() => {
-
-  if (!category) {
+  if (!category || category === "undefined") {
     setfilteredProducts(products);
   } else {
-    setfilteredProducts(products.filter((p) => p.category === category));
+    setfilteredProducts(
+      products.filter((p) => p.category === category)
+    );
   }
-
-    }, [category, products]);
+  }, [category, products]);
   
   // console.log(filteredProducts);
 
 
   return filteredProducts ?(
     <>
-    {/* nav import karege */}
-    <Nav/>
+  <Nav/>
 
-     
-     <div className=' w-[85%]  p-10 pt-[4%] flex flex-wrap overflow-x-hidden overflow-y-auto '>
-       
-       {filteredProducts && filteredProducts.map((p, i) =>(
-        <Link
-           key={p.id}
-             to={`/details/${p.id}`} 
-             className='mr-3 mb-3 card p-3 border shadow rounded w-[18%] h-[30vh] 
-             flex justify-center flex-col items-center'>
+  <div className='w-[85%] p-10 pt-[4%] flex flex-wrap overflow-x-hidden overflow-y-auto'>
+    
+    {(filteredProducts?.length > 0 ? filteredProducts : products).map((p) => (
+      <Link
+        key={p.id}
+        to={`/details/${p.id}`}
+        className='mr-3 mb-3 card p-3 border shadow rounded w-[18%] h-[30vh] flex justify-center flex-col items-center'
+      >
+        <div
+          className='hover:scale-110 mb-3 w-full h-[80%] bg-contain bg-no-repeat bg-center'
+          style={{
+            backgroundImage: `url(${p.image})`,
+          }}
+        ></div>
 
-          <div
-            className='hover:scale-110 mb-3 w-full h-[80%] bg-contain bg-no-repeat bg-center ' 
-            style={{
-             backgroundImage: 
-             `url(${p.image})`,
-            }}
-          ></div>
-           <h1 className='hover:text-blue-400'>
-             {p.title}
-           </h1>
-        </Link>
-        ))} 
-       
+        <h1 className='hover:text-blue-400'>
+          {p.title}
+        </h1>
+      </Link>
+    ))}
 
-       
-
-        
-      </div>
-   </>
+  </div>
+</>
    ):(<Loading/>
   );
 };
